@@ -3,50 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>omarchy-gdrive</title>
-<meta name="description" content="google drive as a normal folder on omarchy, built on rclone.">
+<title>OMA Drive</title>
+<meta name="description" content="OMA Drive: a personal Google Drive integration for an Omarchy Linux desktop, using rclone and omarchy-gdrive.">
 <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <main>
 <header>
-  <span class="crumbs"><a href="https://gloomyweather.github.io/">gloomyweather</a><span class="sep">/</span><a href="./">omarchy-gdrive</a></span>
-  <nav><a href="./" aria-current="page">about</a><a href="privacy.html">privacy</a><a href="https://github.com/gloomyweather/omarchy-gdrive-app">source</a></nav>
+  <span class="crumbs"><a href="https://github.com/charleschao">charleschao</a><span class="sep">/</span><a href="./">OMA Drive</a></span>
+  <nav><a href="./" aria-current="page">about</a><a href="privacy.html">privacy</a><a href="https://github.com/charleschao/omarchy-gdrive-app">source</a></nav>
 </header>
 
-<h1>omarchy-gdrive</h1>
-<p class="lead">google drive as a normal folder on omarchy.</p>
+<h1>OMA Drive</h1>
+<p class="lead">personal Google Drive access from an Omarchy Linux desktop.</p>
 
-<p>open, edit and save drive files from files, the terminal or any app. it runs
-only on your computer, built on <a href="https://rclone.org/">rclone</a>. there is
-no server and no account other than your own google one.</p>
+<p>OMA Drive is a personal desktop integration built on <a href="https://rclone.org/">rclone</a>
+and a fork of <a href="https://github.com/gloomyweather/omarchy-gdrive-app">gloomyweather's omarchy-gdrive</a>.
+It lets the owner browse Google Drive folders and open, upload, edit, and remove files from local applications.
+The integration runs on the owner's computer; this website hosts only public documentation.</p>
 
+<h2><span>01</span>how it works</h2>
 <ul>
-  <li>bookmarks in files for my drive, shared with me and shared drives</li>
-  <li>right-click: open in google drive, copy link, make available offline</li>
-  <li>a drive icon in the bar: connected, uploading, offline, error</li>
-  <li>omarchy menu entry and the <code>super + ctrl + g</code> hotkey</li>
-  <li>connects at login, waits for the network, finishes uploads at shutdown</li>
+  <li>the owner authorizes access to their own Google Drive through Google's OAuth sign-in</li>
+  <li>rclone mounts Drive as a local folder and retrieves file contents on demand</li>
+  <li>folder listings, temporary file caches, and authorization credentials are kept locally</li>
+  <li>the omarchy-gdrive package adds desktop controls and connection status</li>
 </ul>
+<p>This is a personal-use integration, not a public hosted file service. It has no separate user registration,
+and it does not give this website access to anyone's Drive.</p>
 
-<h2><span>01</span>install</h2>
-<pre>git clone https://github.com/gloomyweather/omarchy-gdrive-app.git ~/.local/src/omarchy-gdrive
-~/.local/src/omarchy-gdrive/install.sh
-nautilus -q</pre>
+<h2><span>02</span>data access</h2>
+<p>The requested Google Drive permission allows listing, reading, creating, updating, and deleting files,
+as needed to use the mounted folder. Review the <a href="privacy.html">privacy policy</a> for details
+about data use, storage, and revoking access.</p>
 
-<h2><span>02</span>create your google key</h2>
-<p>about ten minutes, once. follow the
-<a href="https://github.com/gloomyweather/omarchy-gdrive-app/blob/main/OAUTH.md">step-by-step guide</a>.
-you end up with a client id and a client secret.</p>
-
-<h2><span>03</span>connect</h2>
-<pre>omarchy-gdrive setup</pre>
-<p>paste the client id and the secret, sign in to google, pick your drives.
-your drive is now in the files sidebar and in <code>~/GoogleDrive</code>.</p>
+<h2><span>03</span>source and contact</h2>
+<p>The <a href="https://github.com/charleschao/omarchy-gdrive-app">personal fork</a> is public.
+The original software and installation documentation are available from
+<a href="https://github.com/gloomyweather/omarchy-gdrive-app">the upstream project</a>.
+For the maintainer of this personal integration, see
+<a href="https://github.com/charleschao">the charleschao GitHub profile</a>.</p>
 
 <footer>
-  <span>mit license</span>
-  <a href="https://github.com/gloomyweather/omarchy-gdrive-app/blob/main/README.md">readme</a>
+  <span>software: MIT license · upstream: gloomyweather</span>
+  <a href="privacy.html">privacy policy</a>
 </footer>
 </main>
 </body>
